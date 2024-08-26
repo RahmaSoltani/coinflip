@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <audio id="coinFlipSound" src="coin.mp3"></audio>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+</head>
+<body>
+    <h1>Coin Flip Game</h1>
+
+    <div class="container">
+
+
+        <button onclick="connectWallet()">Connect MetaMask</button>
+
+        <div class="coin" id="coin">
+            <div class="heads">
+                <img src="heads.svg" alt="Heads">
+            </div>
+            <div class="tails">
+                <img src="tails.svg" alt="Tails">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="flip-button" onclick="flipCoin()">Flip Coin</button>
+        </div>
+        <div class="guess-container">
+            <label>
+                <input type="radio" name="guess" value="true"> Heads
+            </label>
+            <label>
+                <input type="radio" name="guess" value="false"> Tails
+            </label>
+        </div>
+        
+        <input type="number" id="amount" placeholder="Amount in ETH">
+        <div id="status"></div>
+        <div id="result"></div>
+    </div>
+
+    <!-- The Alert Card -->
+    <div id="alertCard" class="alert">
+        <span class="close" onclick="closeAlert()">&times;</span>
+        <p id="alertMessage"></p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
